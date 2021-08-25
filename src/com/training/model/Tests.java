@@ -2,6 +2,8 @@ package com.training.model;
 
 import java.util.ArrayList;
 
+
+
 public class Tests {
     private int testId;
     private int teacherId;
@@ -9,13 +11,20 @@ public class Tests {
     private String testName;
     private int numberOfQuestions;
 
+
+
+
     public Tests(int testId, int teacherId, ArrayList<Teacher> teacherName, String testName, int numberOfQuestions) {
         this.testId = testId;
         this.teacherId = teacherId;
         this.teacherName = teacherName;
         this.testName = testName;
         this.numberOfQuestions = numberOfQuestions;
+
+
     }
+
+
 
     public ArrayList<Teacher> getTeacherName() {
         return teacherName;
@@ -57,11 +66,6 @@ public class Tests {
     public int getNumberOfQuestions() {
         return numberOfQuestions;
     }
-
-
-
-
-
 
 }
 
