@@ -1,9 +1,11 @@
 package com.JetPack.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Group {
+public class Group implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int id;
     private String groupName;
     private ArrayList<Student> students;
@@ -14,6 +16,35 @@ public class Group {
         this.groupName = groupName;
         this.students = students;
         this.teachers = teachers;
+    }
+
+    public Group(String[] value) {
+        this.id = Integer.parseInt(value[0]);
+        this.groupName = value[1];
+        fillStudentFromStringValues(value);
+        fillTeacherFromStringValues(value);
+    }
+
+    public void fillTeacherFromStringValues(String[] value){
+        //Reading teacher data into a group collection from a file
+        ArrayList<Teacher> teachersList = new ArrayList<>();
+        for (int i = 7; i < value.length; i++){
+            Teacher teacher = new Teacher();
+            teacher.setName(value[i]);
+            teachersList.add(teacher);
+        }
+        this.teachers = teachersList;
+    }
+
+    public void fillStudentFromStringValues(String[] value){
+        //Reading student data into a group collection from a file
+        ArrayList<Student> studentsList = new ArrayList<>();
+        for (int i = 2; i < value.length-1; i++){
+            Student student = new Student();
+            student.setName(value[i]);
+            studentsList.add(student);
+        }
+        this.students = studentsList;
     }
 
     public int getId() {
@@ -48,6 +79,9 @@ public class Group {
         this.teachers = teachers;
     }
 
-
+    @Override
+    public String toString() {
+        return groupName;
+    }
 
 }

@@ -22,15 +22,18 @@ public class StudentView {
                 System.out.println("View full list of users enter - All\nView user list page by page enter - Page\nFind a user by name enter - Search");
                 String input = scanner.nextLine();
                 switch (input) {
+                    //View all data student: list tests and number of questions.
                     case "All":
                         System.out.println("Student " + student.getName() + " has a list of tests:");
-                        for (int i = 0; i < student.getTestName().size(); i++) {
-                            System.out.println(i + 1 + ". " + student.getTestName().get(i).getTestName() + " ,number of questions on the test - " + student.getNumberOfQuestions().get(i).getNumberOfQuestions());
+                        for (int i = 0; i < student.getTests().size(); i++) {
+                            System.out.println(i + 1 + ". " + student.getTests().get(i).getTestName() + " ,number of questions on the test - " + student.getTests().get(i).getNumberOfQuestions());
                         }
                         break;
+                    //Paging all data student: list tests and number of questions.
                     case "Page":
                         viewPagingListTestStudent();
                         break;
+                    //Search all data student: list tests and number of questions.
                     case "Search":
                         searchNameTest();
                         break;
@@ -47,7 +50,7 @@ public class StudentView {
             e.printStackTrace();
             getStudentData();
         }
-
+         //Going to test solutions
         TestCont.getStartTestQuestions();
     }
 

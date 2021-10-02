@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class AdminCont {
 
     public static void contAdmin(){
+        //Admin main menu
         Scanner scan = new Scanner(System.in);
         System.out.println("If you want to exit to the main menu - enter Menu\nIf you want to close the program - press Enter");
         String adm = scan.nextLine();

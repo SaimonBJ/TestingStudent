@@ -1,16 +1,17 @@
 package com.JetPack.View;
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 public class UsersView {
 
 
     public static void viewDataBase(){
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter your position in the training center: Student, Teacher or Admin");
         String positionInCenter = scan.nextLine();
-
+        //Training center user selection
         switch (positionInCenter) {
             case ("Student"):
                 StudentView.getStudentData();

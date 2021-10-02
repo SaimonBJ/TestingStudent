@@ -1,0 +1,21 @@
+Question 1 - Theme: Arithmetic tests: 2 + 2 = ?,[[1 option: 2,  2 option: 4,  3 option: 6]],2
+Question 2 - Theme: Arithmetic tests: 2 - 2 = ?,[[1 option: 0,  2 option: 1,  3 option: 2]],1
+Question 3 - Theme: Arithmetic tests: 2 * 2 = ?,[[1 option: 2,  2 option: 8,  3 option: 4]],3
+Question 4 - Theme: Arithmetic tests: 2 / 2 = ?,[[1 option: 1,  2 option: 2,  3 option: 0]],1
+Question 5 - Theme: Arithmetic tests: 2 + 4 = ?,[[1 option: 6,  2 option: 7,  3 option: 9]],1
+Question 6 - Theme: Elementary Algebra tests: 2 + 2 * 2 = ?,[[1 option: 10,  2 option: 8,  3 option: 6]],3
+Question 7 - Theme: Elementary Algebra tests: 2 + 2 / 2 = ?,[[1 option: 3,  2 option: 2,  3 option: 4]],1
+Question 8 - Theme: Elementary Algebra tests: 5 - 2 * 2 = ?,[[1 option: 1,  2 option: 6,  3 option: 3]],1
+Question 9 - Theme: Elementary Algebra tests: 2 - 2 / 2 = ?,[[1 option: 1,  2 option: 2,  3 option: 0]],1
+Question 10 - Theme: Arithmetic equations tests: x + 2 = ?; if x = 5,[[1 option: 7,  2 option: 5,  3 option: 2]],1
+Question 11 - Theme: Arithmetic equations tests: x - 2 = ?; if x = 10,[[1 option: 7,  2 option: 5,  3 option: 10]],3
+Question 12 - Theme: Arithmetic equations tests: x * 2 = ?; if x = 2,[[1 option: 1,  2 option: 4,  3 option: 3]],1
+Question 13 - Theme: Chemical formulas: What is the formula for nitrogen,[[1 option: N2,  2 option: N3,  3 option: N5]],1
+Question 14 - Theme: Chemical formulas: What is the formula for oxygen?,[[1 option: O,  2 option: O2,  3 option: O3]],2
+Question 15 - Theme: Chemical formulas: What is the formula for hydrogen?,[[1 option: H,  2 option: H2,  3 option: H4]],2
+Question 16 - Theme: Chemical formulas: What is the formula for water?,[[1 option: HO,  2 option: HO2,  3 option: H2O]],3
+Question 17 - Theme: Valence of chemical elements: Determine the valence of chlorine (Cl) in chlorine oxide (Cl2O),[[1 option: 7,  2 option: 2,  3 option: 3]],1
+Question 18 - Theme: Valence of chemical elements: Determine the valence of Mg in its compound with oxygen (MgO2),[[1 option: 5,  2 option: 2,  3 option: 3]],2
+Question 19 - Theme: Molecular weight: Determine the relative molecular weight of water (H2 O),[[1 option: 18,  2 option: 25,  3 option: 21]],1
+Question 20 - Theme: Molecular weight: Determine the relative molecular weight of manganese (Mn),[[1 option: 55,  2 option: 51,  3 option: 54]],3
+Question 21 - Theme: Molecular weight: Determine the relative molecular weight of magnesium (Mg),[[1 option: 22,  2 option: 24,  3 option: 30]],2

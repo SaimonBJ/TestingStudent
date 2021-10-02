@@ -10,17 +10,15 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 
-
 public class PagingView {
 
     public static void viewPagingListTestStudent(){
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of lines on the page:");
         int pagingTest = scanner.nextInt();
         long page = 0;
 
-
+        //Page turning cycle
         while (true){
             String scannerPage = scanner.nextLine();
 
@@ -41,9 +39,9 @@ public class PagingView {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+            //Sorting results
             DataBase.getTests().sort(Comparator.comparing(Tests::getTestName));
-
+            //Output the results to the console
             DataBase.getTests().stream().distinct().skip(page * pagingTest).limit(pagingTest).forEach(Tests -> System.out.println("Test name: " + Tests.getTestName() + ", numberOfQuestion: " + Tests.getNumberOfQuestions()));
 
             System.out.println("For view next page enter - Next\nFor view previous page enter - Previous\nFor exit main menu enter - Menu\nTo exit the program enter - Exit");
@@ -62,7 +60,7 @@ public class PagingView {
         int pagingTest = scanner.nextInt();
         long page = 0;
 
-
+        //Page turning cycle
         while (true){
             String scannerPage = scanner.nextLine();
 
@@ -87,7 +85,9 @@ public class PagingView {
             for (Teacher teacher : DataBase.getTeachers()) {
                 if (teacher.getName().equals(teacherName)){
                     foundTeacher = true;
+                    //Sorting results
                     DataBase.getResults().sort(Comparator.comparing(Result::getResult));
+                    //Output the results to the console
                     DataBase.getResults().stream().filter(result -> result.getTeacherId() == teacher.getId()).skip(page * pagingTest).limit(pagingTest).forEach(result -> System.out.println("In group: " + DataBase.getGroups().get(result.getStudentsGroupId() - 1).getGroupName() + ", student -  " + DataBase.getStudents().get(result.getStudentsId() - 1).getName() + " , rated - " + " - " + result.getResultMap()));
                 }
             }
@@ -112,7 +112,7 @@ public class PagingView {
         int pagingTest = scanner.nextInt();
         long page = 0;
 
-
+        //Page turning cycle
         while (true){
             String scannerPage = scanner.nextLine();
 
@@ -134,7 +134,9 @@ public class PagingView {
             for (Teacher teacher : DataBase.getTeachers()) {
                 if (teacher.getName().equals(teacherName)){
                     foundTeacher = true;
+                    //Sorting results
                     DataBase.getTests().sort(Comparator.comparing(Tests::getTestName));
+                    //Output the results to the console
                     DataBase.getTests().stream().filter(tests -> tests.getTeacherId() == teacher.getId()).distinct().skip(page * pagingTest).limit(pagingTest).forEach(Tests -> System.out.println("Test name: " + Tests.getTestName()));
                 }
             }
@@ -154,13 +156,12 @@ public class PagingView {
     }
 
     public static void viewPagingListStudent(){
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of lines on the page:");
         int pagingTest = scanner.nextInt();
         long page = 0;
 
-
+        //Page turning cycle
         while (true){
             String scannerPage = scanner.nextLine();
 
@@ -181,9 +182,9 @@ public class PagingView {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+            //Sorting results
             DataBase.getStudents().sort(Comparator.comparing(Student::getName));
-
+            //Output the results to the console
             DataBase.getStudents().stream().map(Student::getName).distinct().skip(page * pagingTest).limit(pagingTest).forEach(System.out::println);
 
             System.out.println("For view next page enter - Next\nFor view previous page enter - Previous\nFor exit main menu enter - Menu");
@@ -191,13 +192,12 @@ public class PagingView {
     }
 
     public static void viewPagingListTeacher(){
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of lines on the page:");
         int pagingTest = scanner.nextInt();
         long page = 0;
 
-
+        //Page turning cycle
         while (true){
             String scannerPage = scanner.nextLine();
 
@@ -218,16 +218,14 @@ public class PagingView {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+            //Sorting results
             DataBase.getTeachers().sort(Comparator.comparing(Teacher::getName));
-
+            //Output the results to the console
             DataBase.getTeachers().stream().map(Teacher::getName).distinct().skip(page * pagingTest).limit(pagingTest).forEach(System.out::println);
 
             System.out.println("For view next page enter - Next\nFor view previous page enter - Previous\nFor exit main menu enter - Menu");
         }
     }
-
-
     }
 
 

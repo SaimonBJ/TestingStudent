@@ -2,10 +2,12 @@ package com.JetPack.Model;
 
 import com.JetPack.Exception.IncorrectUserNameException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Teacher extends Users {
 
+public class Teacher extends Users implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String subject;
     private  ArrayList<Tests> testName;
     private  ArrayList<Result> result;
@@ -20,6 +22,30 @@ public class Teacher extends Users {
     public Teacher(int id, String name, ArrayList<Student> students) throws IncorrectUserNameException {
         super(id, name);
         this.students = students;
+    }
+
+    public Teacher(String[] value) {
+        super(Integer.parseInt(value[0]),value[1]);
+        this.setId(Integer.parseInt(value[0]));
+        this.setName(value[1]);
+        this.subject = value[2];
+        fillTestsFromStringValuesTeacher(value);
+    }
+
+    public Teacher() {
+
+    }
+
+    public void fillTestsFromStringValuesTeacher(String[] value){
+        //Reading test data into a teacher collection from a file
+        ArrayList<Tests> teacherTests = new ArrayList<>();
+        for (int i = 3; i < value.length-5; i+=2){
+            Tests test = new Tests();
+            test.setTestName(value[i]);
+            test.setNumberOfQuestions(Integer.parseInt(value[i+1]));
+            teacherTests.add(test);
+        }
+        this.testName = teacherTests;
     }
 
     public ArrayList<Student> getStudents() {

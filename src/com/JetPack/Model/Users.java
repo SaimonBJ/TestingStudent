@@ -1,10 +1,15 @@
 package com.JetPack.Model;
 
-public class Users {
+import java.io.Serializable;
 
+public class Users implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int id;
-
     private String name;
+
+    public Users() {
+
+    }
 
     public void setName(String name) {
         this.name = name;
