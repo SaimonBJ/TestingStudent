@@ -2,16 +2,19 @@ package com.JetPack.Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Student extends Users implements Serializable {
     private static final long serialVersionUID = 1L;
-    private ArrayList<Tests> tests;
+//    private ArrayList<Tests> testName;
     private int studentsGroup;
+    private List<Tests> testName = Collections.emptyList();
 
-    public Student(int id, String name, ArrayList<Tests> tests,  int studentsGroup) {
+    public Student(int id, String name, ArrayList<Tests> testName,  int studentsGroup) {
 
         super(id,name);
-        this.tests = tests;
+        this.testName = testName;
         this.studentsGroup = studentsGroup;
     }
 
@@ -36,7 +39,7 @@ public class Student extends Users implements Serializable {
                test.setNumberOfQuestions(Integer.parseInt(value[i+1]));
            studentTests.add(test);
        }
-       this.tests = studentTests;
+       this.testName = studentTests;
     }
 
 
@@ -50,18 +53,26 @@ public class Student extends Users implements Serializable {
         this.studentsGroup = studentsGroup;
     }
 
-    public ArrayList<Tests> getTests() {
-        return tests;
+    public List<Tests> getTests() {
+        return testName;
     }
 
     public void setTestName(ArrayList<Tests> tests) {
-        this.tests = tests;
+        this.testName = tests;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        List<String> nameTest = new ArrayList<>();
+        for (int i = 0; i < testName.size() ; i++) {
+            testName.get(i).getTestName();
+            nameTest.add(testName.get(i).getTestName());
+        }
+        return "Student{" + "id = " + getId() + " name = " + getName() +
+                " tests=" + nameTest +
+                ", studentsGroup = " + studentsGroup +
+                '}';
+    }
 }
 
 

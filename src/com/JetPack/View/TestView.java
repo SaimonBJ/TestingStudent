@@ -3,8 +3,14 @@ package com.JetPack.View;
 import com.JetPack.Controller.TestCont;
 import com.JetPack.DataBase;
 import com.JetPack.Exception.correctAnswerException;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static com.JetPack.JDBCDAO.JDBCConnection.connectDB;
 
 
 public class TestView {
@@ -65,7 +71,26 @@ public class TestView {
         //Saving test results
         for (int i = 0; i < DataBase.getResults().size(); i++) {
             if (personName.equals(DataBase.getStudents().get(i).getName())){
+                //Writing test results to HashMap
                 DataBase.getResults().get(i).getResultMap().put(DataBase.getStudents().get(i).getName(), rightAnswersCounter[0]);
+                //Writing test results to Data Base
+                PreparedStatement preparedStatement = null;
+
+                String sql = "UPDATE result_map SET value = ? WHERE id_student = ?";
+
+                try {
+                    Connection connection = connectDB();
+                    preparedStatement = connection.prepareStatement(sql);
+                    preparedStatement.setInt(1, rightAnswersCounter[0]);
+                    preparedStatement.setInt(2, DataBase.getStudents().get(i).getId());
+
+                    preparedStatement.executeUpdate();
+
+                    connection.close();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
         //Going to test main menu

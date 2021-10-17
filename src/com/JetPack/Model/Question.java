@@ -40,7 +40,7 @@ public class Question implements Serializable {
         return rightAnswerNumber;
     }
 
-    public void setRightAnswerNumber(byte rightAnswerNumber) {
+    public void setRightAnswerNumber(int rightAnswerNumber) {
         this.rightAnswerNumber = rightAnswerNumber;
     }
 

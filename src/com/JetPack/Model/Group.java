@@ -2,6 +2,7 @@ package com.JetPack.Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Group implements Serializable {
@@ -23,6 +24,10 @@ public class Group implements Serializable {
         this.groupName = value[1];
         fillStudentFromStringValues(value);
         fillTeacherFromStringValues(value);
+    }
+
+    public Group() {
+
     }
 
     public void fillTeacherFromStringValues(String[] value){
@@ -81,7 +86,25 @@ public class Group implements Serializable {
 
     @Override
     public String toString() {
-        return groupName;
+
+        List<String> nameStudent = new ArrayList<>();
+        for (int i = 0; i < students.size() ; i++) {
+            students.get(i).getName();
+            nameStudent.add(students.get(i).getName());
+        }
+
+        List<String> nameTeacher = new ArrayList<>();
+        for (int i = 0; i < teachers.size() ; i++) {
+            teachers.get(i).getName();
+            nameTeacher.add(teachers.get(i).getName());
+        }
+
+        return "Group{" +
+                "id=" + id +
+                ", groupName='" + groupName + '\'' +
+                ", students=" + nameStudent +
+                ", teachers=" + nameTeacher +
+                '}';
     }
 
 }

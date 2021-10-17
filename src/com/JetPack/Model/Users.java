@@ -34,8 +34,9 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return
+        return "Users{" +
                 "id=" + id +
-                ", name='" + name + '\'';
+                ", name='" + name + '\'' +
+                '}';
     }
 }

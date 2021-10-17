@@ -138,9 +138,22 @@ public class Result implements Comparable <Result> , Serializable {
 
     @Override
     public String toString() {
-        return "Result" +
-                "result=" + result;
+
+        List<String> nameTeacher = new ArrayList<>();
+        for (int i = 0; i < teacherName.size() ; i++) {
+            teacherName.get(i).getName();
+            nameTeacher.add(teacherName.get(i).getName());
+        }
+
+        return "Result{" +
+                "resultId=" + resultId +
+                ", studentsId=" + studentsId +
+                ", studentsGroupId=" + studentsGroupId +
+                ", teacherId=" + teacherId +
+                ", teacherName=" + nameTeacher +
+                ", testId=" + testId +
+                ", result=" + result +
+                ", resultMap=" + resultMap +
+                '}';
     }
-
-
 }

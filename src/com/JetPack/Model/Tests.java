@@ -2,7 +2,7 @@ package com.JetPack.Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class Tests implements Serializable {
@@ -88,9 +88,20 @@ public class Tests implements Serializable {
 
     @Override
     public String toString() {
-        return
-                "testName='" + testName + '\'' +
-                ", numberOfQuestions=" + numberOfQuestions;
+
+        List<String> nameTeacher = new ArrayList<>();
+        for (int i = 0; i < teacherName.size() ; i++) {
+            teacherName.get(i).getName();
+            nameTeacher.add(teacherName.get(i).getName());
+        }
+
+        return "Tests{" +
+                "testId=" + testId +
+                ", teacherId=" + teacherId +
+                ", teacherName=" + nameTeacher +
+                ", testName='" + testName + '\'' +
+                ", numberOfQuestions=" + numberOfQuestions +
+                '}';
     }
 }
 

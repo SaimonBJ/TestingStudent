@@ -4,22 +4,27 @@ import com.JetPack.DataBase;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Admin extends Users implements Serializable {
     private static final long serialVersionUID = 1L;
-    private ArrayList<Teacher> teachers;
-    private ArrayList<Student> students;
+    private ArrayList<Teacher> teacherName;
+    private ArrayList<Student> studentName;
 
     public Admin(int id, String name, ArrayList<Teacher> teachers, ArrayList<Student> students) {
         super(id, name);
-        this.teachers = teachers;
-        this.students = students;
+        this.teacherName = teachers;
+        this.studentName = students;
     }
 
     public Admin(String[] value) {
         super(Integer.parseInt(value[0]), value[1]);
         fillTeacherFromStringValues(value);
         fillStudentFromStringValues(value);
+    }
+
+    public Admin() {
+
     }
 
 
@@ -31,7 +36,7 @@ public class Admin extends Users implements Serializable {
             teacher.setName(value[i]);
             teachersList.add(teacher);
         }
-        this.teachers = teachersList;
+        this.teacherName = teachersList;
     }
 
     public void fillStudentFromStringValues(String[] value){
@@ -42,25 +47,45 @@ public class Admin extends Users implements Serializable {
             student.setName(value[i]);
             studentsList.add(student);
         }
-        this.students = studentsList;
+        this.studentName = studentsList;
     }
 
     public ArrayList<Teacher> getTeachers() {
-        return teachers;
+        return teacherName;
     }
 
     public void setTeachers(ArrayList<Teacher> teachers) {
-        this.teachers = teachers;
+        this.teacherName = teachers;
     }
 
     public ArrayList<Student> getStudents() {
-        return students;
+        return studentName;
     }
 
     public void setStudents(ArrayList<Student> students) {
-        this.students = students;
+        this.studentName = students;
     }
 
+    @Override
+    public String toString() {
+
+        List<String> nameStudent = new ArrayList<>();
+        for (int i = 0; i < studentName.size() ; i++) {
+            studentName.get(i).getName();
+            nameStudent.add(studentName.get(i).getName());
+        }
+
+        List<String> nameTeacher = new ArrayList<>();
+        for (int i = 0; i < teacherName.size() ; i++) {
+            teacherName.get(i).getName();
+            nameTeacher.add(teacherName.get(i).getName());
+        }
+
+        return "Admin{"  + "id = " + getId() + ", name = " + getName() +
+                ", teachers=" + nameTeacher +
+                ", students=" + nameStudent +
+                '}';
+    }
 
 }
 

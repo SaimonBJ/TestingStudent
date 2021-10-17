@@ -4,6 +4,9 @@ import com.JetPack.Exception.IncorrectUserNameException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class Teacher extends Users implements Serializable {
@@ -80,7 +83,27 @@ public class Teacher extends Users implements Serializable {
         this.result = result;
     }
 
+    @Override
+    public String toString() {
 
+        List<String> nameTest = new ArrayList<>();
+        for (int i = 0; i < testName.size() ; i++) {
+            testName.get(i).getTestName();
+            nameTest.add(testName.get(i).getTestName());
+        }
+
+        List<String> nameStudent = new ArrayList<>();
+        for (int i = 0; i < students.size() ; i++) {
+            students.get(i).getName();
+            nameStudent.add(students.get(i).getName());
+        }
+
+        return "Teacher{" + "id = " + getId() + " name = " + getName() +
+                " subject = " + subject + '\'' +
+                ", testName = " + nameTest +
+                ", students = " + nameStudent +
+                '}';
+    }
 }
 
 
