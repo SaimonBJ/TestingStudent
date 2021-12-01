@@ -1,4 +1,4 @@
-package com.jetpack.controller;
+package com.jetpack.menu;
 
 import com.jetpack.view.TestView;
 import com.jetpack.view.UsersView;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version 1.0 02.11.2021
  * @author Semen Bogun
  */
-public class TestCont {
+public class TestMenu {
 
     /**
      * The method that starts the test

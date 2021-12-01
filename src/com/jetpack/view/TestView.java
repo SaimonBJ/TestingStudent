@@ -1,6 +1,6 @@
 package com.jetpack.view;
 
-import com.jetpack.controller.TestCont;
+import com.jetpack.menu.TestMenu;
 import com.jetpack.Collections;
 import com.jetpack.exception.correctAnswerException;
 
@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.jetpack.jdbcdao.JDBCConnection.connectDB;
+import static com.jetpack.jdbc.JDBCConnection.connectDB;
 
 /**
  * A class for solving tests
@@ -103,6 +103,6 @@ public class TestView {
             }
         }
         //Going to test main menu
-        TestCont.testComplete();
+        TestMenu.testComplete();
     }
 }

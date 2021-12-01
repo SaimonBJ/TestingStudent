@@ -1,5 +1,5 @@
 package com.jetpack.view;
-import com.jetpack.controller.AdminCont;
+import com.jetpack.menu.AdminMenu;
 import com.jetpack.Collections;
 import com.jetpack.model.Admin;
 import java.util.Scanner;
@@ -96,6 +96,6 @@ public class AdminView {
                 break;
         }
         //Going to admin main menu
-        AdminCont.contAdmin();
+        AdminMenu.contAdmin();
     }
 }

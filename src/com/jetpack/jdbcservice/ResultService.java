@@ -1,6 +1,6 @@
 package com.jetpack.jdbcservice;
 
-import com.jetpack.jdbcdao.JDBCConnection;
+import com.jetpack.jdbc.JDBCConnection;
 import com.jetpack.model.Result;
 import com.jetpack.model.Teacher;
 import java.sql.*;

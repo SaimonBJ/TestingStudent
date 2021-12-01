@@ -1,4 +1,4 @@
-package com.jetpack.jdbcdao;
+package com.jetpack.jdbc;
 
 
 import java.sql.*;

@@ -1,6 +1,6 @@
 package com.jetpack.view;
 
-import com.jetpack.controller.TestCont;
+import com.jetpack.menu.TestMenu;
 import com.jetpack.Collections;
 import com.jetpack.exception.IncorrectUserNameException;
 import com.jetpack.model.Student;
@@ -59,7 +59,7 @@ public class StudentView {
             getStudentData();
         }
          //Going to test solutions
-        TestCont.getStartTestQuestions();
+        TestMenu.getStartTestQuestions();
     }
 
 

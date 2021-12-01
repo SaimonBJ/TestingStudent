@@ -1,6 +1,6 @@
 package com.jetpack.view;
 
-import com.jetpack.controller.TeacherCont;
+import com.jetpack.menu.TeacherMenu;
 import com.jetpack.Collections;
 import com.jetpack.exception.IncorrectUserNameException;
 import com.jetpack.model.Result;
@@ -17,7 +17,6 @@ import static com.jetpack.view.SearchView.searchNameTest;
  * @author Semen Bogun
  */
 public class TeacherView {
-
     /**
      * Method outputting information for the teacher
      * @throws IncorrectUserNameException - the user entered the wrong name
@@ -46,7 +45,8 @@ public class TeacherView {
                             System.out.println("Students results:");
                             for (Result result : Collections.getResults()) {
                                 if (result.getTeacherId() == teacher.getId()) {
-                                    System.out.println("In group: " + Collections.getGroups().get(result.getStudentsGroupId() - 1).getGroupName() + ", student -  " + Collections.getStudents().get(result.getStudentsId() - 1).getName() + " , rated - " + " - " + result.getResultMap());
+                                    System.out.println("In group: " + Collections.getGroups().get(result.getStudentsGroupId() - 1).getGroupName() +
+                                            ", student -  " + Collections.getStudents().get(result.getStudentsId() - 1).getName() + " , rated - " + " - " + result.getResultMap());
                                 }
                             }
                             break;
@@ -79,7 +79,7 @@ public class TeacherView {
             getTeacherData();
         }
         //Going to teacher main menu
-        TeacherCont.contTeacher();
+        TeacherMenu.contTeacher();
     }
 
 
